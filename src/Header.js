@@ -4,11 +4,10 @@ import logo from './images/note.png'
 const Header = () => {
     return (
         <>
-            <div className="header">
+            <nav>
                 <img src={logo} alt="logo" width='50' height='50' />
                 <h1> Keep Notes </h1>
-            </div>
-            <hr />
+            </nav>
         </>
     )
 }

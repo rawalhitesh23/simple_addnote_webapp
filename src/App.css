@@ -11,42 +11,45 @@ body {
   color: #202124;
   background-color: rgb(240, 232, 232);
   font-size: 15px;
-  min-width: 360px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: 100vh;
 }
 
-.header {
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  margin-bottom: 60px;
   display: flex;
   padding: 10px;
   width: 100%;
+  align-items: center;
   background-color: #f5f5e9;
+  border-bottom: 1px solid #000;
 }
 
-.header h1 {
+.nav h1 {
   font-size: 1.2rem;
-  line-height: 3rem;
   margin-left: 10px;
   letter-spacing: 1px;
   font-weight: 400;
 }
 
-footer {
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
+.main {
+  min-height: calc(100vh - 71px);
 }
 
 .main_note {
   width: 100%;
-  display: grid;
-  place-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .main_note form {
-  position: absolute;
-  top: 25%;
+  width: 40%;
+  position: relative;
   left: 50%;
   min-width: 30%;
   min-height: 170px;
@@ -66,8 +69,18 @@ footer {
   color: #000;
 }
 
+.main_note form textarea {
+  overflow-y: scroll;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 .main_note form input {
   font-weight: 600;
+  border-radius: 5px;
 }
 
 .replayicon {
@@ -103,36 +116,56 @@ footer {
   box-shadow: 1px 1px 3px 0px #817575;
 } 
 
-.note {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  width: 200px;
-  height: 120px;
-  padding: 5px 5px;
+.note_div {
+  width: 100%;
+  position: relative;
+  top: 40%;
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.note_div .note {
+  margin: .5rem;
+  position: relative;
+  word-wrap: break-word;
+  padding: 5px;
+  min-width: 100px;
+  min-height: 120px;
   border-radius: 5px;
-  overflow: hidden;
   background-color: #fff;
   box-shadow: 1px 1px 3px 0px #817575;
 }
 
-.note h1 {
+.note_div .note h1 {
+  margin-right: 35px;
   font-size: 16px;
 }
 
-.note p {
+.note_div .note p {
   font-size: 13px;
   font-weight: 500;
 }
 
-.note .btn {
-  position: relative;
-  top: 25px;
-  left: 80%;
+.note_div .note .btn {
+  position: absolute;
+  left: 84%;
+  top: 4%;
   border-radius: 50%;
   background-color: #fff;
   color: rgb(219, 34, 34);
   box-shadow: 1px 1px 2px 0px #817575;
+}
+
+.footer {
+  max-height: 40px;
+  background-color: #f5f5e9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  margin-top: auto;
+  width:100%;
+  border-top: 1px solid #000;
 }
 
 @media only screen and (max-width: 700px) {

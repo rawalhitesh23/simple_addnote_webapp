@@ -4,10 +4,10 @@ const Footer = () => {
     let year = new Date().getFullYear()
     return (
         <>
-            <footer>
+            <div className="footer">
                 <p>copyright
                 <span> &#169;</span> {year}</p>
-            </footer>
+            </div>
         </>
     )
 }
